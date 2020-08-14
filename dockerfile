@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 RUN apt-get update
-RUN apt-get install -y libpng-dev libgmp-dev libxml2-dev
+RUN apt-get install -y libpng-dev libgmp-dev libxml2-dev wget
 RUN docker-php-ext-install opcache gd gmp xmlrpc intl mysqli sockets gettext pdo_mysql
 RUN rm -rf /var/lib/apt/lists/*
 # ADD phpipam-1.4.tar /var/www/html/
