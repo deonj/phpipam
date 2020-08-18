@@ -1,4 +1,4 @@
-PHPIPAM Version 1.4
+**PHPIPAM Version 1.4**
 
 PHPIPAM installed with PHP:7.4-apache and MYSQL:5.6.49. If you are importing existing data with a new installation then a manual import is recommended. Your backup SQL data can be placed in the volume created and then manually imported (See PHPIPAM documentation for details).
 
