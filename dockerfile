@@ -9,7 +9,7 @@ RUN tar -C /var/www/html -xvf phpipam-1.4.tar
 RUN rm phpipam-1.4.tar
 RUN mv /var/www/html/phpipam/config.dist.php /var/www/html/phpipam/config.php
 WORKDIR /etc/apache2/sites-enabled
-RUN sed -i '$ a \\n<Directory /var/www/html/phpipam>
+RUN sed -i '$ a \\n<Directory /var/www/html/phpipam>' 000-default.conf
 RUN sed -i '$ a \\tOptions FollowSymLinks' 000-default.conf
 RUN sed -i '$ a \\tAllowOverride all' 000-default.conf
 RUN sed -i '$ a \\tRequire all granted' 000-default.conf
