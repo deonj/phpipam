@@ -9,18 +9,13 @@ RUN tar -C /var/www/html -xvf phpipam-1.4.tar
 RUN rm phpipam-1.4.tar
 RUN mv /var/www/html/phpipam/config.dist.php /var/www/html/phpipam/config.php
 WORKDIR /etc/apache2/sites-enabled
-RUN sed -i '$ a \\n<Directory /var/www/html/phpipam> \\
-                \\tOptions FollowSymLink \\
-                \\tAllowOverride all \\
-                \\tRequire all granted \\
-                \\tOrder allow,deny \\
-                \\tAllow from all' 000-default.conf
-#RUN sed -i '$ a \\tOptions FollowSymLinks' 000-default.conf
-#RUN sed -i '$ a \\tAllowOverride all' 000-default.conf
-#RUN sed -i '$ a \\tRequire all granted' 000-default.conf
-#RUN sed -i '$ a \\tOrder allow,deny' 000-default.conf
-#RUN sed -i '$ a \\tAllow from all' 000-default.conf
-#RUN sed -i '$ a </Directory>' 000-default.conf
+RUN sed -i '$ a \\n<Directory /var/www/html/phpipam>
+RUN sed -i '$ a \\tOptions FollowSymLinks' 000-default.conf
+RUN sed -i '$ a \\tAllowOverride all' 000-default.conf
+RUN sed -i '$ a \\tRequire all granted' 000-default.conf
+RUN sed -i '$ a \\tOrder allow,deny' 000-default.conf
+RUN sed -i '$ a \\tAllow from all' 000-default.conf
+RUN sed -i '$ a </Directory>' 000-default.conf
 RUN chown -R www-data:www-data /var/www/html/phpipam
 RUN chmod -R 755 /var/www/html/phpipam
 RUN sed -i "s/define('BASE', \"\/\");/define('BASE', \"\/phpipam\/\");/" /var/www/html/phpipam/config.php
