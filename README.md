@@ -32,6 +32,7 @@ PHPIPAM installed with PHP:7.4-apache and MYSQL:5.6.49. If you are importing exi
           
     volumes:
       db-data:
+        name: phpipam_db
 
 The container ecosystem can now be launched as follows:
 
