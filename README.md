@@ -10,6 +10,7 @@ PHPIPAM installed with PHP:7.4-apache and MYSQL:5.6.49. If you are importing exi
     services:
       web:
         image: deonj/phpipam
+        container_name: ipam_web
         ports:
           - "8080:80"
         depends_on:
@@ -17,6 +18,7 @@ PHPIPAM installed with PHP:7.4-apache and MYSQL:5.6.49. If you are importing exi
         tty: true
       db:
         image: mysql:5.6.49
+        container_name: ipam_db
         volumes:
           - db-data:/var/lib/mysql
         environment:
