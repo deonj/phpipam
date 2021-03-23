@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:7.4.16-apache
 RUN apt-get update
 RUN apt-get install -y libpng-dev libgmp-dev libxml2-dev wget
 RUN docker-php-ext-install opcache gd gmp xmlrpc intl mysqli sockets gettext pdo_mysql
